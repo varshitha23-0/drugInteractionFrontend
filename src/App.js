@@ -45,6 +45,8 @@ function App() {
         body: JSON.stringify({ tablets: cleaned }),
       });
       const data = await res.json();
+      console.log('Fetch status:', res.status, res.statusText);
+      console.log('Received data:', data); // ADD THIS
       if (res.ok) setResults(data.results || []);
       else setError(data.error || 'Server error');
     } catch (err) {
