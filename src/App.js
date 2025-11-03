@@ -39,7 +39,7 @@ function App() {
     try {
       const cleaned = tablets.map(s => s.trim()).filter(Boolean);
       if (cleaned.length < 1) { setError('Enter at least one name.'); setLoading(false); return; }
-      const res = await fetch("http://127.0.0.1:5000/api/sendInteractions", {
+      const res = await fetch("https://druginteractionbackend.onrender.com/api/sendInteractions", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ tablets: cleaned }),
@@ -58,7 +58,7 @@ function App() {
     try {
       const cleaned = tablets.map(s => s.trim()).filter(Boolean);
       if (cleaned.length < 1) { setError('Enter at least one tablet.'); setLoading(false); return; }
-      const res = await fetch("http://127.0.0.1:5000/api/sendFoodInteractions", {
+      const res = await fetch("https://druginteractionbackend.onrender.com/api/sendFoodInteractions", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ tablets: cleaned }),
